@@ -3,14 +3,13 @@ import styled from 'styled-components';
 export const StyledNavbar = styled.div`
   background-color: white;
 
-  & > div {
-    position: relative;
-    height: 100px;
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
+  nav {
+    & > div {
+      height: 100px;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
 
-    nav {
       & > div {
         display: flex;
         justify-content: space-between;
