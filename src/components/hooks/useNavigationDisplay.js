@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const useNavigationDisplay = () => {
-  // - navigationHeight based off of nav > div height value in Navbar.styled.js.
-  // - navigationHeight value must always match Navbar's nav > div height.
+  // - navigationHeight based off of <header> element height value in Layout.styled.js.
+  // - navigationHeight value must always match Layout's <header> element height.
   const navigationHeight = 100;
   const [prevScrollYPos, setPrevScrollYPos] = useState(0);
   const [isNavigationShown, setIsNavigationShown] = useState(true);

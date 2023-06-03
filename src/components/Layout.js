@@ -3,15 +3,13 @@ import GlobalFonts from '../components/styles/GlobalFonts';
 import GlobalStyles from '../components/styles/GlobalStyles';
 import { StyledLayout } from './styles/Layout.styled';
 import Navbar from './Navbar';
-import useNavigationDisplay from './hooks/useNavigationDisplay';
 
 const Layout = ({ children }) => {
-  const isNavigationShown = useNavigationDisplay();
   return (
     <>
       <GlobalFonts />
       <GlobalStyles />
-      <StyledLayout isNavigationShown={isNavigationShown}>
+      <StyledLayout>
         <header>
           <Navbar />
         </header>
