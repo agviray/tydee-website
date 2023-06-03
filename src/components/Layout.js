@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
     if (!navigationHeight) {
       setNavigationHeight(headerRef.current.offsetHeight);
     }
-  }, []);
+  }, [navigationHeight]);
 
   useEffect(() => {
     // - Determines whether or not to display the website navigation by
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
     return () => {
       window.removeEventListener('scroll', toggleNavigationDisplay);
     };
-  }, [prevScrollYPos]);
+  }, [navigationHeight, prevScrollYPos, isNavigationShown]);
 
   return (
     <>
