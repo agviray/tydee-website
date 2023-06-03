@@ -10,6 +10,10 @@ export const StyledHamburger = styled.div`
   justify-content: center;
   align-items: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -17,7 +21,7 @@ export const StyledHamburger = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #ffffff;
     border-radius: 50%;
     transform: ${({ isMenuOpen }) => (isMenuOpen ? 'scale(1)' : 'scale(0)')};
     transition: all 0.2s ease;
@@ -33,7 +37,6 @@ export const StyledHamburger = styled.div`
       display: inline-block;
       height: 2px;
       width: 25px;
-      background-color: rgba(0, 0, 0, 1);
       background-color: ${({ isMenuOpen }) =>
         isMenuOpen ? '#006aff' : '#000000'};
       transition: all 0.2s ease;
