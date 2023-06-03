@@ -7,6 +7,7 @@ import NavMenu from './NavMenu';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // - Pause scrolling on the website if the the mobile menu is open.
   useEffect(() => {
     if (isMenuOpen === true) {
       document.body.style.overflow = 'hidden';

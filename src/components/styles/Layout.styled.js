@@ -10,5 +10,9 @@ export const StyledLayout = styled.div`
     -webkit-box-shadow: 0px 4px 13px 1px rgba(0, 0, 0, 0.46);
     -moz-box-shadow: 0px 4px 13px 1px rgba(0, 0, 0, 0.46);
     box-shadow: 0px 4px 13px 1px rgba(0, 0, 0, 0.46);
+
+    transform: ${({ isNavigationShown }) =>
+      isNavigationShown ? 'translateY(0)' : 'translateY(-110px)'};
+    transition: transform 0.3s ease;
   }
 `;
