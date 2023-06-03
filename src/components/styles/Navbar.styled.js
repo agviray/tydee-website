@@ -5,6 +5,9 @@ export const StyledNavbar = styled.div`
 
   nav {
     & > div {
+      // - If changing this height value, always update
+      //   navigationHeight value in useNavigationDisplay hook
+      //   to match it.
       height: 100px;
       padding: 0 1.5rem;
       display: flex;
