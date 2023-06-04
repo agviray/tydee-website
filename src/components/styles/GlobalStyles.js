@@ -14,12 +14,12 @@ html {
 body {
   min-width: 300px;
   font-size: 16px;
-  line-height: 1.6;
   font-family: "Avenir Light", Arial, Helvetica, sans-serif;
 }
 
 p {
   letter-spacing: 1px;
+  line-height: 1.6;
 }
 
 ul {
@@ -32,6 +32,10 @@ ul {
 a {
   text-decoration: none;
   color: #ffffff;
+}
+
+button {
+  border: none;
 }
 `;
 
