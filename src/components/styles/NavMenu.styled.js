@@ -7,7 +7,6 @@ export const StyledNavMenu = styled.div`
   width: 100%;
   height: 100vh;
   overflow-y: auto;
-  z-index: 1;
   background-color: rgba(6, 196, 172, 1);
   opacity: ${({ isMenuOpen }) => (isMenuOpen ? '1' : '0')};
   transform: ${({ isMenuOpen }) =>

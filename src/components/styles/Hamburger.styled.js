@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const StyledHamburger = styled.div`
   position: relative;
   padding: 1rem;
-  z-index: 3;
   width: 60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 
   &:hover {
     cursor: pointer;

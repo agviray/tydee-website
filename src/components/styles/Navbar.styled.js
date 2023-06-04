@@ -14,6 +14,7 @@ export const StyledNavbar = styled.div`
     isNavigationShown ? 'translateY(0)' : 'translateY(-110px)'};
   transition: transform 0.3s ease;
   background-color: white;
+  z-index: 2;
 
   nav {
     height: inherit;
