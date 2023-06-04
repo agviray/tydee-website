@@ -30,4 +30,33 @@ export const StyledNavMenu = styled.div`
       }
     }
   }
+
+  &.desktopStyle {
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    transform: none;
+    transition: none;
+
+    div {
+      padding: 0;
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        /* padding-left: 100px; */
+        opacity: 1;
+        transition: none;
+
+        span {
+          color: black;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
 `;

@@ -29,6 +29,12 @@ export const StyledNavbar = styled.div`
         align-items: center;
         width: 100%;
 
+        &.desktopStyle {
+          max-width: 1100px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
         & > span {
           display: inline-flex;
 

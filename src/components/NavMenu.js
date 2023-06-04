@@ -1,9 +1,15 @@
 import React from 'react';
 import { StyledNavMenu } from './styles/NavMenu.styled';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 const NavMenu = ({ isMenuOpen }) => {
+  const windowWidth = useWindowDimensions().width;
+
   return (
-    <StyledNavMenu isMenuOpen={isMenuOpen}>
+    <StyledNavMenu
+      isMenuOpen={isMenuOpen}
+      className={`${windowWidth >= 900 ? 'desktopStyle' : ''}`}
+    >
       <div>
         <ul>
           <li>

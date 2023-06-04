@@ -4,10 +4,12 @@ import TydeeLogo from '../images/logo-01.svg';
 import Hamburger from './Hamburger';
 import NavMenu from './NavMenu';
 import useNavigationDisplay from './hooks/useNavigationDisplay';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isNavigationShown = useNavigationDisplay();
+  const windowWidth = useWindowDimensions().width;
 
   // - Pause scrolling on the website if the the mobile menu is open.
   useEffect(() => {
@@ -22,7 +24,7 @@ const Navbar = () => {
     <StyledNavbar isNavigationShown={isNavigationShown}>
       <nav>
         <div>
-          <div>
+          <div className={`${windowWidth >= 900 ? 'desktopStyle' : ''}`}>
             <span>
               <img src={TydeeLogo} alt="Tydee logo" />
             </span>
