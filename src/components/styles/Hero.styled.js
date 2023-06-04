@@ -97,6 +97,11 @@ export const StyledHero = styled.div`
           font-size: 20px;
           color: #006aff;
           background-color: white;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: rgb(5, 196, 172);
+            background-color: rgb(65, 65, 65);
+          }
         }
       }
     }
