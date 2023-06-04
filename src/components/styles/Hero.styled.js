@@ -1,4 +1,28 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import twinkle from '../../images/home-page/twinkle.svg';
+
+// - Animation for star twinkle.
+const starTwinkle = keyframes`
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
 
 export const StyledHero = styled.div`
   background-color: #006aff;
@@ -17,13 +41,32 @@ export const StyledHero = styled.div`
       z-index: 1;
 
       h1 {
+        display: flex;
+        flex-direction: column;
         font-family: 'Source Sans Pro Black';
         font-size: 26px;
         letter-spacing: 0.5px;
         word-spacing: 5px;
 
         span {
+          position: relative;
           display: inline-block;
+
+          // - Star twinkle image
+          &:nth-of-type(1) {
+            &::after {
+              content: url(${twinkle});
+              position: absolute;
+              top: -16px;
+              left: -23px;
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              animation-duration: 1.3s;
+              animation-name: ${starTwinkle};
+              animation-timing-function: ease-in;
+            }
+          }
         }
       }
     }
