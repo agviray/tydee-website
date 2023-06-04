@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useNavigationDisplay = () => {
+const useNavigationDisplay = (windowWidth) => {
   // - navigationHeight based off of <header> element height value in Layout.styled.js.
   // - navigationHeight value must always match Layout's <header> element height.
   const navigationHeight = 100;
@@ -42,7 +42,7 @@ const useNavigationDisplay = () => {
     };
   }, [prevScrollYPos, isNavigationShown]);
 
-  return isNavigationShown;
+  return windowWidth >= 900 ? true : isNavigationShown;
 };
 
 export default useNavigationDisplay;

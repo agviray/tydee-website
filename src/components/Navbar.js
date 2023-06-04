@@ -8,8 +8,8 @@ import useWindowDimensions from './hooks/useWindowDimensions';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isNavigationShown = useNavigationDisplay();
   const windowWidth = useWindowDimensions().width;
+  const isNavigationShown = useNavigationDisplay(windowWidth);
 
   // - Pause scrolling on the website if the the mobile menu is open.
   useEffect(() => {
