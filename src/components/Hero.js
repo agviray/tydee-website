@@ -1,28 +1,33 @@
 import React from 'react';
-import { StyledHero } from './styles/Hero.styled';
+import {
+  StyledHero,
+  StyledHeading,
+  StyledSubtext,
+  StyledButtonContainer,
+} from './styles/Hero.styled';
 import heroCleaner from '../images/home-page/hero-cleaner.png';
 
 const Hero = () => {
   return (
     <StyledHero>
       <div className="innerWrapper">
-        <div className={'headingContainer'}>
+        <StyledHeading>
           <h1>
             <span>KEEP'N IT TYDEE</span>
             <span>SO YOU DON'T HAVE TO</span>
           </h1>
-        </div>
-        <div className={'subtextContainer'}>
+        </StyledHeading>
+        <StyledSubtext>
           <p>
             5 star rated home and balcony cleaning services by the best cleaners
             in your area
           </p>
-        </div>
-        <div className={'bookButtonContainer'}>
+        </StyledSubtext>
+        <StyledButtonContainer>
           <button>
             <span>Book Now</span>
           </button>
-        </div>
+        </StyledButtonContainer>
         <div className={'imageContainer'}>
           <img src={heroCleaner} alt="Woman holding cleaning supplies" />
         </div>
