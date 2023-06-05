@@ -4,33 +4,40 @@ export const StyledWhy = styled.div`
   background-color: white;
 
   .innerWrapper {
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
 
-    h2 {
-      color: #006aff;
-      font-size: 20px;
-      font-family: 'Montserrat Extra Bold';
-      text-align: center;
-      letter-spacing: 1px;
-      word-spacing: 3px;
+    .headingContainer {
+      h2 {
+        color: #006aff;
+        font-size: 20px;
+        font-family: 'Montserrat Extra Bold';
+        text-align: center;
+        letter-spacing: 1px;
+        word-spacing: 3px;
 
-      @media screen and (min-width: 700px) {
-        font-size: 25px;
+        @media screen and (min-width: 700px) {
+          font-size: 25px;
+        }
       }
     }
   }
 `;
 
-export const StyledGridContainer = styled.div`
+export const StyledContentContainer = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
   padding-top: 2rem;
+  @media screen and (min-width: 900px) {
+    padding-top: 4rem;
+  }
+`;
+
+export const StyledGridContainer = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 100%);
   gap: 60px;
-  max-width: 1100px;
-  margin: 0 auto;
 
   @media screen and (min-width: 900px) {
-    padding-top: 4rem;
     grid-template-columns: repeat(3, minmax(0, 100%));
   }
 `;
@@ -106,17 +113,5 @@ export const StyledImageContainer = styled.div`
       height: 100%;
       max-width: 100%;
     }
-
-    /* @media screen and (min-width: 700px) {
-      &.shield {
-        width: 70px;
-        height: 82px;
-      }
-      &.clock,
-      &.calendar {
-        width: 80px;
-        height: 80px;
-      }
-    } */
   }
 `;
