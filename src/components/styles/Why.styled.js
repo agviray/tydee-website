@@ -13,6 +13,10 @@ export const StyledWhy = styled.div`
       text-align: center;
       letter-spacing: 1px;
       word-spacing: 3px;
+
+      @media screen and (min-width: 700px) {
+        font-size: 25px;
+      }
     }
   }
 `;
@@ -20,11 +24,49 @@ export const StyledWhy = styled.div`
 export const StyledGridContainer = styled.div`
   padding-top: 2rem;
   display: grid;
-  /* gap: 3rem; */
+  grid-template-columns: minmax(0, 100%);
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 900px) {
+    padding-top: 4rem;
+    grid-template-columns: repeat(3, minmax(0, 100%));
+  }
 `;
 
 export const StyledGridItem = styled.div`
+  position: relative;
   text-align: center;
+
+  @media screen and (min-width: 900px) {
+    padding: 2rem 0;
+  }
+
+  &:nth-of-type(2),
+  &:nth-of-type(3) {
+    /* Lines that separate the Why section grid items */
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+    }
+    &::before {
+      top: -30px;
+      left: 0;
+    }
+    @media screen and (min-width: 900px) {
+      &::before {
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: -30px;
+      }
+    }
+  }
+
   h3 {
     color: #06c4ac;
     font-size: 18px;
@@ -32,6 +74,16 @@ export const StyledGridItem = styled.div`
 
   p {
     padding-top: 1rem;
+  }
+
+  @media screen and (min-width: 700px) {
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -54,13 +106,17 @@ export const StyledImageContainer = styled.div`
       height: 100%;
       max-width: 100%;
     }
-  }
-`;
 
-export const StyledLine = styled.div`
-  display: inline-block;
-  height: 1px;
-  width: 100%;
-  margin: 3rem 0;
-  background-color: black;
+    /* @media screen and (min-width: 700px) {
+      &.shield {
+        width: 70px;
+        height: 82px;
+      }
+      &.clock,
+      &.calendar {
+        width: 80px;
+        height: 80px;
+      }
+    } */
+  }
 `;

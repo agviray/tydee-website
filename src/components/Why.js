@@ -4,7 +4,6 @@ import {
   StyledGridContainer,
   StyledGridItem,
   StyledImageContainer,
-  StyledLine,
 } from './styles/Why.styled';
 import shield from '../images/home-page/why-shield.svg';
 import clock from '../images/home-page/why-clock.svg';
@@ -30,7 +29,6 @@ const Why = () => {
               all times.
             </p>
           </StyledGridItem>
-          <StyledLine></StyledLine>
           <StyledGridItem>
             <StyledImageContainer>
               <div className="clock">
@@ -44,7 +42,6 @@ const Why = () => {
               the rest.
             </p>
           </StyledGridItem>
-          <StyledLine></StyledLine>
           <StyledGridItem>
             <StyledImageContainer>
               <div className="calendar">
