@@ -37,7 +37,7 @@ export const StyledContentContainer = styled.div`
 `;
 
 export const StyledList = styled.ul`
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
