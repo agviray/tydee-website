@@ -7,6 +7,7 @@ import bathroomSink01 from '../images/home-page/work-photos/br-sink-01.webp';
 import kitchen01 from '../images/home-page/work-photos/kitchen-01.webp';
 import shower01 from '../images/home-page/work-photos/shower-01.webp';
 import shower02 from '../images/home-page/work-photos/shower-02.webp';
+import Carousel from './Carousel';
 
 const workImages = [
   {
