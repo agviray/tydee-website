@@ -71,9 +71,7 @@ const OurWork = () => {
           <h2>OUR WORK</h2>
         </div>
         <StyledContentContainer>
-          <div>
-            <h3>Carousel of Photos</h3>
-          </div>
+          <Carousel images={workImages} />
         </StyledContentContainer>
       </div>
     </StyledOurWork>

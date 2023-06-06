@@ -22,7 +22,6 @@ export const StyledOurWork = styled.div`
 `;
 
 export const StyledContentContainer = styled.div`
-  max-width: 1000px;
   margin: 0 auto;
   padding-top: 2rem;
   @media screen and (min-width: 900px) {

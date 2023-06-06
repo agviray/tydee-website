@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
 import useWindowDimensions from './hooks/useWindowDimensions';
-import { StyledCarousel } from './styles/Carousel.styled';
+import { StyledCarousel, StyledCarouselItems } from './styles/Carousel.styled';
 
 const Carousel = ({ images }) => {
-  const [imageInView, setImageInView] = useState(0);
   return (
-    <div className="styledCarousel">
+    <StyledCarousel>
       <div className="carouselContent">
-        <div className="carouselItems">
-          {/* images will be rendered here */}
-        </div>
-        <div className="styledControls">
-          <div className="controlsContent">
-            <div className="control">
-              <span className="previous"></span>
+        <StyledCarouselItems>
+          {images.map((image, index) => (
+            <div key={index} className="imageContainer">
+              {image.content()}
             </div>
-            <div className="control">
-              <span className="next"></span>
-            </div>
-          </div>
-        </div>
+          ))}
+        </StyledCarouselItems>
       </div>
-    </div>
+    </StyledCarousel>
   );
 };
 
