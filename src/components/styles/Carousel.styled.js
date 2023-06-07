@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCarouselWrapper = styled.div`
   position: relative;
-  max-width: 3000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 100px;
 `;
@@ -17,15 +17,16 @@ export const StyledCarousel = styled.div`
 
 export const StyledCarouselItems = styled.div`
   display: flex;
-  transition: transform 0.3s;
-  gap: 10px;
+  transition: transform 0.5s ease-in-out;
 
   & div.imageContainer {
     display: inline-block;
+    min-width: 100%;
+    max-width: 1000px;
 
     img {
-      width: 491px;
-      height: 368px;
+      width: 100%;
+      height: 500px;
       object-fit: cover;
       object-position: 50% 50%;
     }

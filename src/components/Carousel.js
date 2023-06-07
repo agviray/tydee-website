@@ -8,14 +8,30 @@ import {
 } from './styles/Carousel.styled';
 
 const Carousel = ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const updateViewedImageIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = 0;
+    } else if (newIndex >= images.length) {
+      newIndex = images.length - 1;
+    }
+    setCurrentImageIndex(newIndex);
+  };
+
   return (
     <StyledCarouselWrapper>
-      <StyledControl className="previous">
+      <StyledControl
+        className="previous"
+        onClick={() => updateViewedImageIndex(currentImageIndex - 1)}
+      >
         <span></span>
       </StyledControl>
       <StyledCarousel>
-        <div className="carouselContent">
-          <StyledCarouselItems>
+        <div>
+          <StyledCarouselItems
+            style={{ transform: `translate(-${currentImageIndex * 100}%)` }}
+          >
             {images.map((image, index) => (
               <div key={index} className="imageContainer">
                 {image.content()}
@@ -24,7 +40,10 @@ const Carousel = ({ images }) => {
           </StyledCarouselItems>
         </div>
       </StyledCarousel>
-      <StyledControl className="next">
+      <StyledControl
+        className="next"
+        onClick={() => updateViewedImageIndex(currentImageIndex + 1)}
+      >
         <span></span>
       </StyledControl>
     </StyledCarouselWrapper>
