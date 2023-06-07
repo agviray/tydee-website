@@ -36,6 +36,7 @@ export const StyledCarouselItems = styled.div`
   }
 `;
 
+// - Carousel arrow buttons
 export const StyledControl = styled.div`
   position: absolute;
   top: 0;
@@ -125,6 +126,42 @@ export const StyledControl = styled.div`
 
       span {
         border-color: white;
+      }
+    }
+  }
+`;
+
+// - Carousel circles/dots
+export const StyledIndicators = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #006aff;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 2px;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.currentImage {
+        width: 13px;
+        height: 13px;
+        background-color: white;
+        border-color: #006aff;
       }
     }
   }

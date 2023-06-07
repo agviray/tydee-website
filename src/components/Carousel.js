@@ -5,6 +5,7 @@ import {
   StyledCarousel,
   StyledCarouselItems,
   StyledControl,
+  StyledIndicators,
 } from './styles/Carousel.styled';
 
 const Carousel = ({ images }) => {
@@ -50,6 +51,19 @@ const Carousel = ({ images }) => {
           <span></span>
         </div>
       </StyledControl>
+      <StyledIndicators>
+        <div>
+          {images.map((image, index, thisArray) => {
+            return index < thisArray.length ? (
+              <span
+                key={index}
+                className={index === currentImageIndex ? 'currentImage' : ''}
+                onClick={() => updateViewedImageIndex(index)}
+              ></span>
+            ) : null;
+          })}
+        </div>
+      </StyledIndicators>
     </StyledCarouselWrapper>
   );
 };
