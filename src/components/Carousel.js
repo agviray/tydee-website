@@ -22,10 +22,11 @@ const Carousel = ({ images }) => {
   return (
     <StyledCarouselWrapper>
       <StyledControl
-        className="previous"
-        onClick={() => updateViewedImageIndex(currentImageIndex - 1)}
+        className={`previous ${currentImageIndex <= 0 ? 'disabled' : ''}`}
       >
-        <span></span>
+        <div onClick={() => updateViewedImageIndex(currentImageIndex - 1)}>
+          <span></span>
+        </div>
       </StyledControl>
       <StyledCarousel>
         <div>
@@ -41,10 +42,13 @@ const Carousel = ({ images }) => {
         </div>
       </StyledCarousel>
       <StyledControl
-        className="next"
-        onClick={() => updateViewedImageIndex(currentImageIndex + 1)}
+        className={`next ${
+          currentImageIndex >= images.length - 1 ? 'disabled' : ''
+        }`}
       >
-        <span></span>
+        <div onClick={() => updateViewedImageIndex(currentImageIndex + 1)}>
+          <span></span>
+        </div>
       </StyledControl>
     </StyledCarouselWrapper>
   );
