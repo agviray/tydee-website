@@ -59,17 +59,17 @@ export const StyledControl = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: white;
-    border-radius: 7px;
+    border-radius: 50%;
     transition: all 0.2s ease;
 
     span {
       display: inline-block;
       width: 25px;
       height: 25px;
-      border-width: 5px 5px 0 0;
+      border-width: 2px 2px 0 0;
       border-style: solid;
       border-color: #006aff;
     }
@@ -78,7 +78,7 @@ export const StyledControl = styled.div`
   &.previous {
     left: -20px;
     @media screen and (min-width: 900px) {
-      left: 0;
+      left: -10px;
     }
 
     div {
@@ -90,7 +90,7 @@ export const StyledControl = styled.div`
         transform: translateX(3px);
       }
       span {
-        transform: translateX(7px) rotate(-135deg);
+        transform: translateX(6px) rotate(-135deg);
       }
     }
   }
@@ -98,7 +98,7 @@ export const StyledControl = styled.div`
   &.next {
     right: -20px;
     @media screen and (min-width: 900px) {
-      right: 0;
+      right: -10px;
     }
 
     div {
@@ -111,7 +111,7 @@ export const StyledControl = styled.div`
       }
 
       span {
-        transform: translateX(-6px) rotate(45deg);
+        transform: translateX(-5px) rotate(45deg);
       }
     }
   }
@@ -135,7 +135,7 @@ export const StyledControl = styled.div`
 export const StyledIndicators = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
 
   & > div {
     display: flex;
@@ -145,8 +145,8 @@ export const StyledIndicators = styled.div`
 
     span {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       background-color: #006aff;
       border-style: solid;
       border-color: transparent;
@@ -158,8 +158,8 @@ export const StyledIndicators = styled.div`
       }
 
       &.currentImage {
-        width: 13px;
-        height: 13px;
+        width: 12px;
+        height: 12px;
         background-color: white;
         border-color: #006aff;
       }
