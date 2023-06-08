@@ -6,6 +6,7 @@ import Why from '../components/Why';
 import How from '../components/How';
 import OurWork from '../components/OurWork';
 import OurTeam from '../components/OurTeam';
+import CustomerReviews from '../components/CustomerReviews';
 
 const Home = () => {
   return (
@@ -25,6 +26,9 @@ const Home = () => {
         </section>
         <section>
           <OurTeam />
+        </section>
+        <section>
+          <CustomerReviews />
         </section>
       </StyledHomePage>
     </Layout>
