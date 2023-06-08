@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Why from '../components/Why';
 import How from '../components/How';
 import OurWork from '../components/OurWork';
+import OurTeam from '../components/OurTeam';
 
 const Home = () => {
   return (
@@ -21,6 +22,9 @@ const Home = () => {
         </section>
         <section>
           <OurWork />
+        </section>
+        <section>
+          <OurTeam />
         </section>
       </StyledHomePage>
     </Layout>
