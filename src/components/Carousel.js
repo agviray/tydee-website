@@ -8,16 +8,16 @@ import {
   StyledIndicators,
 } from './styles/Carousel.styled';
 
-const Carousel = ({ images }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const Carousel = ({ children, items }) => {
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
 
-  const updateViewedImageIndex = (newIndex) => {
+  const updateActiveItemIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = 0;
-    } else if (newIndex >= images.length) {
-      newIndex = images.length - 1;
+    } else if (newIndex >= items.length) {
+      newIndex = items.length - 1;
     }
-    setCurrentImageIndex(newIndex);
+    setActiveItemIndex(newIndex);
   };
 
   return (
@@ -25,40 +25,36 @@ const Carousel = ({ images }) => {
       <StyledCarousel>
         <div>
           <StyledCarouselItems
-            style={{ transform: `translate(-${currentImageIndex * 100}%)` }}
+            style={{ transform: `translate(-${activeItemIndex * 100}%)` }}
           >
-            {images.map((image, index) => (
-              <div key={index} className="imageContainer">
-                {image.content()}
-              </div>
-            ))}
+            {children}
           </StyledCarouselItems>
         </div>
       </StyledCarousel>
       <StyledControl
-        className={`previous ${currentImageIndex <= 0 ? 'disabled' : ''}`}
+        className={`previous ${activeItemIndex <= 0 ? 'disabled' : ''}`}
       >
-        <div onClick={() => updateViewedImageIndex(currentImageIndex - 1)}>
+        <div onClick={() => updateActiveItemIndex(activeItemIndex - 1)}>
           <span></span>
         </div>
       </StyledControl>
       <StyledControl
         className={`next ${
-          currentImageIndex >= images.length - 1 ? 'disabled' : ''
+          activeItemIndex >= items.length - 1 ? 'disabled' : ''
         }`}
       >
-        <div onClick={() => updateViewedImageIndex(currentImageIndex + 1)}>
+        <div onClick={() => updateActiveItemIndex(activeItemIndex + 1)}>
           <span></span>
         </div>
       </StyledControl>
       <StyledIndicators>
         <div>
-          {images.map((image, index, thisArray) => {
+          {items.map((item, index, thisArray) => {
             return index < thisArray.length ? (
               <span
                 key={index}
-                className={index === currentImageIndex ? 'currentImage' : ''}
-                onClick={() => updateViewedImageIndex(index)}
+                className={index === activeItemIndex ? 'currentImage' : ''}
+                onClick={() => updateActiveItemIndex(index)}
               ></span>
             ) : null;
           })}

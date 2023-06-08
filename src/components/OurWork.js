@@ -1,5 +1,9 @@
 import React from 'react';
-import { StyledOurWork, StyledContentContainer } from './styles/OurWork.styled';
+import {
+  StyledOurWork,
+  StyledContentContainer,
+  StyledImageContainer,
+} from './styles/OurWork.styled';
 import balcony01 from '../images/home-page/work-photos/balcony-01.webp';
 import balcony02 from '../images/home-page/work-photos/balcony-02.webp';
 import bathroom01 from '../images/home-page/work-photos/bathroom-01.webp';
@@ -11,58 +15,35 @@ import Carousel from './Carousel';
 
 const workImages = [
   {
-    content: () => (
-      <figure>
-        <img src={balcony01} alt="Clean condo balcony with blue chair" />
-      </figure>
-    ),
+    imgSrc: balcony01,
+    imgAlt: `Clean condo balcony with blue chair`,
   },
   {
-    content: () => (
-      <figure>
-        <img src={balcony02} alt="Clean condo balcony with woven chair" />
-      </figure>
-    ),
+    imgSrc: balcony02,
+    imgAlt: `Clean condo balcony with woven chair`,
   },
   {
-    content: () => (
-      <figure>
-        <img
-          src={bathroom01}
-          alt="Clean bathroom with jacuzzi and stand up shower"
-        />
-      </figure>
-    ),
+    imgSrc: bathroom01,
+    imgAlt: `Clean bathroom with jacuzzi and stand up shower`,
   },
   {
-    content: () => (
-      <figure>
-        <img src={bathroomSink01} alt="Clean granite bathroom sink" />
-      </figure>
-    ),
+    imgSrc: bathroomSink01,
+    imgAlt: `Clean granite bathroom sink`,
   },
   {
-    content: () => (
-      <figure>
-        <img src={kitchen01} alt="Clean home kitchen area with dark cabinets" />
-      </figure>
-    ),
+    imgSrc: kitchen01,
+    imgAlt: `Clean home kitchen area with dark cabinets`,
   },
   {
-    content: () => (
-      <figure>
-        <img src={shower01} alt="Clean bathroom stand up shower" />
-      </figure>
-    ),
+    imgSrc: shower01,
+    imgAlt: `Clean bathroom tub/shower`,
   },
   {
-    content: () => (
-      <figure>
-        <img src={shower02} alt="Clean bathroom tub/shower" />
-      </figure>
-    ),
+    imgSrc: shower02,
+    imgAlt: `Clean bathroom tub and shower`,
   },
 ];
+
 const OurWork = () => {
   return (
     <StyledOurWork>
@@ -71,7 +52,15 @@ const OurWork = () => {
           <h2>OUR WORK</h2>
         </div>
         <StyledContentContainer>
-          <Carousel images={workImages} />
+          <Carousel items={workImages}>
+            {workImages.map((image, index) => (
+              <StyledImageContainer key={index}>
+                <figure>
+                  <img src={image.imgSrc} alt={image.imgAlt} />
+                </figure>
+              </StyledImageContainer>
+            ))}
+          </Carousel>
         </StyledContentContainer>
       </div>
     </StyledOurWork>

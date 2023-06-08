@@ -28,3 +28,16 @@ export const StyledContentContainer = styled.div`
     padding-top: 4rem;
   }
 `;
+
+export const StyledImageContainer = styled.div`
+  display: inline-block;
+  min-width: 100%;
+  max-width: 1000px;
+
+  img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+`;

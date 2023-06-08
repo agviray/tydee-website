@@ -21,19 +21,6 @@ export const StyledCarousel = styled.div`
 export const StyledCarouselItems = styled.div`
   display: flex;
   transition: transform 0.5s ease-in-out;
-
-  & div.imageContainer {
-    display: inline-block;
-    min-width: 100%;
-    max-width: 1000px;
-
-    img {
-      width: 100%;
-      height: 70vh;
-      object-fit: cover;
-      object-position: 50% 50%;
-    }
-  }
 `;
 
 // - Carousel arrow buttons
