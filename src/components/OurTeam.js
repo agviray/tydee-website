@@ -5,6 +5,7 @@ import {
   StyledTeamCarousel,
   StyledItems,
   StyledControl,
+  StyledIndicators,
 } from './styles/OurTeam.styled';
 import member01 from '../images/home-page/cleaners/member01.jpg';
 import member02 from '../images/home-page/cleaners/member02.jpg';
@@ -85,6 +86,19 @@ const OurTeam = () => {
               </StyledControl>
             </div>
           </StyledTeamCarousel>
+          <StyledIndicators>
+            <div>
+              {teamMembers.map((member, index, thisArray) => {
+                return index < thisArray.length ? (
+                  <span
+                    key={index}
+                    className={index === activeImageIndex ? 'activeImage' : ''}
+                    onClick={() => updateActiveImageIndex(index)}
+                  ></span>
+                ) : null;
+              })}
+            </div>
+          </StyledIndicators>
         </StyledContentContainer>
       </div>
     </StyledOurTeam>

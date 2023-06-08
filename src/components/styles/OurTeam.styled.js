@@ -111,6 +111,10 @@ export const StyledControl = styled.div`
       border-width: 2px 2px 0 0;
       border-style: solid;
       border-color: #06c4ac;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -132,6 +136,41 @@ export const StyledControl = styled.div`
       span {
         align-self: right;
         transform: translateX(-4px) rotate(45deg);
+      }
+    }
+  }
+`;
+
+export const StyledIndicators = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #414141;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 2px;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.activeImage {
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border-color: #414141;
       }
     }
   }
