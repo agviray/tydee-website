@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyledOurTeam,
   StyledContentContainer,
@@ -35,6 +35,17 @@ const teamMembers = [
 ];
 
 const OurTeam = () => {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const updateActiveImageIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = teamMembers.length - 1;
+    } else if (newIndex >= teamMembers.length) {
+      newIndex = 0;
+    }
+    setActiveImageIndex(newIndex);
+  };
+
   return (
     <StyledOurTeam>
       <div className="innerWrapper">
@@ -44,13 +55,10 @@ const OurTeam = () => {
         <StyledContentContainer>
           <StyledTeamCarousel>
             <div>
-              <StyledControl>
-                {/* <div>
-                  <span>Left</span>
-                </div> */}
-              </StyledControl>
-              <StyledItems>
-                {teamMembers.map((member) => (
+              <StyledItems
+                style={{ transform: `translate(-${activeImageIndex * 100}%)` }}
+              >
+                {teamMembers.map((member, index) => (
                   <div key={member.name} className="item">
                     <div className="imageContainer">
                       <figure>
@@ -61,11 +69,20 @@ const OurTeam = () => {
                   </div>
                 ))}
               </StyledItems>
-              {/* <StyledControl>
+              <StyledControl className={'previous'}>
                 <div>
-                  <span>Right</span>
+                  <span
+                    onClick={() => updateActiveImageIndex(activeImageIndex - 1)}
+                  ></span>
                 </div>
-              </StyledControl> */}
+              </StyledControl>
+              <StyledControl className={'next'}>
+                <div>
+                  <span
+                    onClick={() => updateActiveImageIndex(activeImageIndex + 1)}
+                  ></span>
+                </div>
+              </StyledControl>
             </div>
           </StyledTeamCarousel>
         </StyledContentContainer>

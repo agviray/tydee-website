@@ -39,13 +39,15 @@ export const StyledTeamCarousel = styled.div`
     position: relative;
     overflow: hidden;
     display: inline-flex;
+    max-width: 580px;
+    margin: 0 auto;
   }
 `;
 
 export const StyledItems = styled.div`
   width: 100%;
   display: flex;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.7s ease-out;
 
   & > div.item {
     display: inline-flex;
@@ -55,11 +57,11 @@ export const StyledItems = styled.div`
 
     & > div.imageContainer {
       display: inline-block;
-      width: 150px;
-      height: 150px;
+      width: 157px;
+      height: 157px;
       margin: 1rem;
       border-radius: 50%;
-      border: 5px solid white;
+      border: 7px solid white;
       -webkit-box-shadow: 0px 0px 10px 1px rgba(51, 51, 51, 0.59);
       -moz-box-shadow: 0px 0px 10px 1px rgba(51, 51, 51, 0.59);
       box-shadow: 0px 0px 10px 1px rgba(51, 51, 51, 0.59);
@@ -80,8 +82,57 @@ export const StyledItems = styled.div`
       padding: 1rem 0;
       display: inline-block;
       color: #06c4ac;
+
+      @media screen and (min-width: 700px) {
+        font-size: 18px;
+      }
     }
   }
 `;
 
-export const StyledControl = styled.div``;
+export const StyledControl = styled.div`
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & > div {
+    display: inline-flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    & > span {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-width: 2px 2px 0 0;
+      border-style: solid;
+      border-color: #06c4ac;
+    }
+  }
+
+  &.previous {
+    left: 0;
+
+    & > div {
+      span {
+        transform: translateX(4px) rotate(-135deg);
+      }
+    }
+  }
+
+  &.next {
+    right: 0;
+
+    & > div {
+      justify-content: end;
+      span {
+        align-self: right;
+        transform: translateX(-4px) rotate(45deg);
+      }
+    }
+  }
+`;
