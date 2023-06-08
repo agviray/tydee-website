@@ -1,10 +1,13 @@
 import React from 'react';
 import {
   StyledCustomerReviews,
-  StyledReviewContainer,
+  StyledContentContainer,
+  StyledReviewsContainer,
   StyledReviewCard,
 } from './styles/CustomerReviews.styled';
 import stars from '../images/home-page/stars-tydee.svg';
+import Carousel from './Carousel';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 const customerReviews = [
   {
@@ -30,31 +33,51 @@ const customerReviews = [
 ];
 
 const CustomerReviews = () => {
+  const windowWidth = useWindowDimensions().width;
+
+  const renderedReviews = (
+    <>
+      {customerReviews.map((review, index) => (
+        <StyledReviewCard key={index}>
+          <div className="starRating">
+            <span>
+              <img src={stars} alt="Five star rating" />
+            </span>
+          </div>
+          <div className="review">
+            {review.reviewParagraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+          <span className="reviewer">
+            <p>{review.reviewerName}</p>
+          </span>
+        </StyledReviewCard>
+      ))}
+    </>
+  );
+
   return (
     <StyledCustomerReviews>
       <div className="innerWrapper">
         <div className="headingContainer">
           <h2>CUSTOMER REVIEWS</h2>
         </div>
-        <StyledReviewContainer>
-          {customerReviews.map((review, index) => (
-            <StyledReviewCard key={index}>
-              <div className="starRating">
-                <span>
-                  <img src={stars} alt="Five star rating" />
-                </span>
-              </div>
-              <div className="review">
-                {review.reviewParagraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-              <span className="reviewer">
-                <p>{review.reviewerName}</p>
-              </span>
-            </StyledReviewCard>
-          ))}
-        </StyledReviewContainer>
+        {windowWidth < 1200 ? (
+          <StyledContentContainer>
+            <>
+              <Carousel items={customerReviews}>
+                <>{renderedReviews}</>
+              </Carousel>
+            </>
+          </StyledContentContainer>
+        ) : (
+          <>
+            <StyledReviewsContainer>
+              <>{renderedReviews}</>
+            </StyledReviewsContainer>
+          </>
+        )}
       </div>
     </StyledCustomerReviews>
   );

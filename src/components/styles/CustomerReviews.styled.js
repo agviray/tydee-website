@@ -23,9 +23,16 @@ export const StyledCustomerReviews = styled.div`
   }
 `;
 
-export const StyledReviewContainer = styled.div`
+export const StyledContentContainer = styled.div`
+  margin: 0 auto;
+  padding-top: 2rem;
+  @media screen and (min-width: 900px) {
+    padding-top: 4rem;
+  }
+`;
+
+export const StyledReviewsContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   gap: 1rem;
   max-width: 1400px;
@@ -42,12 +49,15 @@ export const StyledReviewContainer = styled.div`
 `;
 
 export const StyledReviewCard = styled.div`
+  display: inline-block;
+  min-width: 100%;
+  max-width: 500px;
   padding: 4rem;
   background-color: #e8eefa;
-  width: 100%;
 
-  @media screen and (min-width: 1000px) {
-    flex: 1;
+  @media screen and (min-width: 1200px) {
+    min-width: auto;
+    width: 500px;
   }
 
   & > div.starRating {
