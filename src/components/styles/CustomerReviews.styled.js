@@ -38,6 +38,7 @@ export const StyledReviewsContainer = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 2rem;
+  overflow: hidden;
 
   @media screen and (min-width: 900px) {
     padding-top: 4rem;
