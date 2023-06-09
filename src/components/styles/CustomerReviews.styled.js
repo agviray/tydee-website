@@ -49,7 +49,7 @@ export const StyledReviewsContainer = styled.div`
   }
 `;
 
-export const StyledReviewCard = styled.div`
+export const StyledReviewCard = styled.article`
   display: inline-block;
   min-width: 100%;
   max-width: 500px;

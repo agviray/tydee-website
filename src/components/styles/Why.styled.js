@@ -42,7 +42,7 @@ export const StyledGridContainer = styled.div`
   }
 `;
 
-export const StyledGridItem = styled.div`
+export const StyledGridItem = styled.article`
   position: relative;
   text-align: center;
 
