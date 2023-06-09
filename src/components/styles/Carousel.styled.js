@@ -14,7 +14,7 @@ export const StyledCarousel = styled.div`
   overflow: hidden;
 
   & > div {
-    display: relative;
+    position: relative;
   }
 `;
 

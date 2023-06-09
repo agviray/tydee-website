@@ -1,6 +1,47 @@
 import styled from 'styled-components';
 
+export const StyledGetStartedWrapper = styled.div`
+  position: relative;
+  display: flex;
+`;
+
+export const StyledGetStartedImageWrapper = styled.div`
+  flex: 1;
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(155, 197, 255, 1) 100%
+  );
+  overflow: hidden;
+  padding-top: 2rem;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    & > div.imageContainer {
+      display: inline-block;
+      width: 90%;
+      max-width: 375px;
+
+      & > img {
+        width: 100%;
+      }
+    }
+  }
+`;
+
 export const StyledGetStarted = styled.div`
+  flex: 1;
+  display: inline-block;
   background: rgb(68, 196, 192);
   background: linear-gradient(
     90deg,
@@ -44,8 +85,11 @@ export const StyledContentInnerContainer = styled.div`
   align-items: center;
   gap: 2rem;
 
-  @media screen and (min-width: 700px) {
-    font-size: 18px;
+  p {
+    text-align: center;
+    @media screen and (min-width: 700px) {
+      font-size: 18px;
+    }
   }
 `;
 
