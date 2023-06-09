@@ -20,12 +20,21 @@ export const StyledNavMenu = styled.div`
       opacity: ${({ isMenuOpen }) => (isMenuOpen ? '1' : '0')};
       transition: all 0.5s 0.2s ease-in;
 
-      span {
-        display: inline-block;
-        width: 100%;
-        padding: 1.5rem 3rem;
-        color: white;
-        font-size: 20px;
+      li {
+        &:not(:last-child) {
+          span {
+            display: inline-block;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            color: white;
+            font-size: 20px;
+          }
+        }
+
+        // - <li> container of Book Now button
+        &:last-child {
+          padding-left: 1.5rem;
+        }
       }
     }
   }
@@ -50,12 +59,45 @@ export const StyledNavMenu = styled.div`
         opacity: 1;
         transition: none;
 
-        span {
-          color: black;
-          padding-left: 0;
-          padding-right: 0;
+        li {
+          &:not(:last-child) {
+            span {
+              color: black;
+              padding-left: 0;
+              padding-right: 0;
+              font-size: 18px;
+              transition: color 0.4s ease;
+            }
+
+            &:hover {
+              span {
+                color: rgb(6, 196, 172);
+              }
+            }
+          }
+
+          // - <li> container of Book Now button
+          &:last-child {
+            padding-left: 0;
+          }
         }
       }
     }
+  }
+`;
+
+export const StyledBookButton = styled.span`
+  display: inline-block;
+  width: 150px;
+  padding: 0.75rem 0;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  background-color: #006aff;
+  border-radius: 40px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    background-color: black;
   }
 `;

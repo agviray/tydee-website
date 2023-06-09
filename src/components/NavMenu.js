@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledNavMenu } from './styles/NavMenu.styled';
+import { StyledNavMenu, StyledBookButton } from './styles/NavMenu.styled';
 import useWindowDimensions from './hooks/useWindowDimensions';
 
 const NavMenu = ({ isMenuOpen }) => {
@@ -23,6 +23,9 @@ const NavMenu = ({ isMenuOpen }) => {
           </li>
           <li>
             <span>Become a Tydee Pro</span>
+          </li>
+          <li>
+            <StyledBookButton>Book Now</StyledBookButton>
           </li>
         </ul>
       </div>
