@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import { StyledNavMenu, StyledBookButton } from './styles/NavMenu.styled';
 import useWindowDimensions from './hooks/useWindowDimensions';
 
@@ -22,16 +22,21 @@ const mainSiteLinks = [
   },
 ];
 
-const NavMenu = ({ isMenuOpen }) => {
+const NavMenu = ({ isMenuOpen, onIsMenuOpenChange }) => {
   const windowWidth = useWindowDimensions().width;
 
   const renderedMenuLinks = mainSiteLinks.map(({ name, href }, index) => (
     <li key={index}>
-      <Link to={`${href}`}>
-        <span>{name}</span>
-      </Link>
+      <span key={index} onClick={() => navigateToPage(href)}>
+        {name}
+      </span>
     </li>
   ));
+
+  const navigateToPage = (href) => {
+    onIsMenuOpenChange(false);
+    navigate(`${href}`);
+  };
 
   return (
     <StyledNavMenu
@@ -42,9 +47,7 @@ const NavMenu = ({ isMenuOpen }) => {
         <ul>
           {renderedMenuLinks}
           <li>
-            <Link to="#">
-              <StyledBookButton>Book Now</StyledBookButton>
-            </Link>
+            <StyledBookButton>Book Now</StyledBookButton>
           </li>
         </ul>
       </div>

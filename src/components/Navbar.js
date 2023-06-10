@@ -35,7 +35,10 @@ const Navbar = () => {
               isMenuOpen={isMenuOpen}
               onIsMenuOpenChange={setIsMenuOpen}
             />
-            <NavMenu isMenuOpen={isMenuOpen} />
+            <NavMenu
+              isMenuOpen={isMenuOpen}
+              onIsMenuOpenChange={setIsMenuOpen}
+            />
           </div>
         </div>
       </nav>

@@ -28,6 +28,10 @@ export const StyledNavMenu = styled.div`
             padding: 1.5rem 3rem;
             color: white;
             font-size: 20px;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
 
