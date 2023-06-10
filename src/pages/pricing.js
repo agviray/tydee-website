@@ -1,18 +1,20 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import {
   StyledPricing,
   StyledContentContainer,
   StyledFlexContainer,
   StyledCard,
-} from '../components/styles/Pricing.Styled';
+  StyledSeeFullDetailsButton,
+} from '../components/styles/Pricing.styled';
 
 const cardContents = [
   {
     heading: 'HOME CLEANING',
     paragraphs: [
       `Whether you're looking for a general or deep clean, we provide dependable and affordable home cleaning services by professionals in your neighborhood.`,
-      `Our home cleaning packages provide personalized service for a thorough and effective clean throughout all common areas of your home`,
+      `Our home cleaning packages provide personalized service for a thorough and effective clean throughout all common areas of your home.`,
       `Prices Starting From`,
     ],
     pricing: [
@@ -84,6 +86,11 @@ const Pricing = () => {
                           <li key={index}>{price}</li>
                         ))}
                       </ul>
+                      <Link to="/detailed-service">
+                        <StyledSeeFullDetailsButton>
+                          See Full Details
+                        </StyledSeeFullDetailsButton>
+                      </Link>
                     </StyledCard>
                   </article>
                 ))}

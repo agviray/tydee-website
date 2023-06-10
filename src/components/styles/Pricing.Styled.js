@@ -39,11 +39,18 @@ export const StyledFlexContainer = styled.div`
 `;
 
 export const StyledCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
   border-radius: 10px;
   -webkit-box-shadow: 6px 6px 13px 1px rgba(0, 106, 255, 0.7);
   -moz-box-shadow: 6px 6px 13px 1px rgba(0, 106, 255, 0.7);
   box-shadow: 6px 6px 13px 1px rgba(0, 106, 255, 0.7);
+
+  @media screen and (min-width: 900px) {
+    align-items: start;
+  }
 
   h3 {
     font-family: 'Montserrat Extra Bold';
@@ -56,6 +63,17 @@ export const StyledCard = styled.div`
     padding-top: 2rem;
   }
 
+  p {
+    text-align: center;
+    @media screen and (min-width: 900px) {
+      text-align: left;
+    }
+  }
+
+  ul {
+    padding-bottom: 2rem;
+  }
+
   @media screen and (min-width: 700px) {
     h3 {
       font-size: 20px;
@@ -63,5 +81,22 @@ export const StyledCard = styled.div`
     p {
       font-size: 18px;
     }
+  }
+`;
+
+export const StyledSeeFullDetailsButton = styled.span`
+  display: inline-block;
+  width: 150px;
+  padding: 0.75rem 0;
+  background-color: white;
+  font-size: 18px;
+  text-align: center;
+  color: #006aff;
+  border: 1px #006aff solid;
+  transition: all 0.2s;
+  &:hover {
+    color: white;
+    background-color: #006aff;
+    border: 1px white solid;
   }
 `;
