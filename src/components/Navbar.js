@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyledNavbar } from './styles/Navbar.styled';
+import { Link } from 'gatsby';
+import { StyledNavbar, StyledLogoContainer } from './styles/Navbar.styled';
 import TydeeLogo from '../images/logo-01.svg';
 import Hamburger from './Hamburger';
 import NavMenu from './NavMenu';
@@ -25,9 +26,11 @@ const Navbar = () => {
       <nav>
         <div>
           <div className={`${windowWidth >= 900 ? 'desktopStyle' : ''}`}>
-            <span>
-              <img src={TydeeLogo} alt="Tydee logo" />
-            </span>
+            <Link to={'/'}>
+              <StyledLogoContainer>
+                <img src={TydeeLogo} alt="Tydee logo" />
+              </StyledLogoContainer>
+            </Link>
             <Hamburger
               isMenuOpen={isMenuOpen}
               onIsMenuOpenChange={setIsMenuOpen}

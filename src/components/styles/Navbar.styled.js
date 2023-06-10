@@ -18,12 +18,16 @@ export const StyledNavbar = styled.div`
 
   nav {
     height: inherit;
+
+    // - nav content inner wrapper
     & > div {
       padding: 0 1.5rem;
       display: flex;
       align-items: center;
       height: inherit;
 
+      // - nav content inner container.
+      // - This contains Logo, Hamburger (mobile view only), NavMenu.
       & > div {
         display: flex;
         justify-content: space-between;
@@ -35,19 +39,19 @@ export const StyledNavbar = styled.div`
           margin-left: auto;
           margin-right: auto;
         }
-
-        & > span {
-          display: inline-flex;
-
-          &:nth-of-type(1) {
-            max-width: 105px;
-
-            img {
-              width: 100%;
-            }
-          }
-        }
       }
+    }
+  }
+`;
+
+export const StyledLogoContainer = styled.span`
+  display: inline-flex;
+
+  &:nth-of-type(1) {
+    max-width: 105px;
+
+    img {
+      width: 100%;
     }
   }
 `;

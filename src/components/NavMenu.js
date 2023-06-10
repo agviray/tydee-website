@@ -1,9 +1,37 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { StyledNavMenu, StyledBookButton } from './styles/NavMenu.styled';
 import useWindowDimensions from './hooks/useWindowDimensions';
 
+const mainSiteLinks = [
+  {
+    name: `Home`,
+    href: `/`,
+  },
+  {
+    name: `Services & Pricing`,
+    href: `/pricing`,
+  },
+  {
+    name: `Commercial Inquiries`,
+    href: `#`,
+  },
+  {
+    name: `Become a Tydee Pro`,
+    href: `#`,
+  },
+];
+
 const NavMenu = ({ isMenuOpen }) => {
   const windowWidth = useWindowDimensions().width;
+
+  const renderedMenuLinks = mainSiteLinks.map(({ name, href }, index) => (
+    <li key={index}>
+      <Link to={`${href}`}>
+        <span>{name}</span>
+      </Link>
+    </li>
+  ));
 
   return (
     <StyledNavMenu
@@ -12,20 +40,11 @@ const NavMenu = ({ isMenuOpen }) => {
     >
       <div>
         <ul>
+          {renderedMenuLinks}
           <li>
-            <span>Home</span>
-          </li>
-          <li>
-            <span>Services & Pricing</span>
-          </li>
-          <li>
-            <span>Commercial Inquiries</span>
-          </li>
-          <li>
-            <span>Become a Tydee Pro</span>
-          </li>
-          <li>
-            <StyledBookButton>Book Now</StyledBookButton>
+            <Link to="#">
+              <StyledBookButton>Book Now</StyledBookButton>
+            </Link>
           </li>
         </ul>
       </div>
