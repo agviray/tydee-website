@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   StyledDetailedService,
   StyledCard,
@@ -9,6 +9,8 @@ import {
 } from '../components/styles/DetailedService.styled';
 import Layout from '../components/Layout';
 
+// *** IMPORTANT ***
+// - Each cardId property in this object, MUST match the hashToFullDetails property in cardContents object located in pricing.js page.
 const cardContents = [
   {
     cardId: `home-cleaning`,
@@ -240,12 +242,24 @@ const cardContents = [
     ],
   },
 ];
-const DetailedService = () => {
+const DetailedService = ({ location }) => {
+  // - Smooth scroll to intended detailed service info, from clicking on See Full Details button in pricing.js page.
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = location.state.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        const topOffset = element.offsetTop;
+        window.scrollBy({ top: topOffset, behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   const renderCard = (content) => {
     const { cardId, heading, headingText, columnOneLists, columnTwoLists } =
       content;
     return (
-      <article id={`#${cardId}`} key={cardId}>
+      <article id={`${cardId}`} key={cardId}>
         <StyledCard>
           <section>
             <h3>{heading}</h3>

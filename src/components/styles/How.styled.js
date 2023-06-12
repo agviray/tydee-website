@@ -82,22 +82,24 @@ export const StyledServicePricingCardContainer = styled.div`
       li {
         width: 45%;
         background-color: white;
-        color: #06c4ac;
         border-radius: 10px;
         font-family: 'Avenir Heavy';
         -webkit-box-shadow: 6px 0px 17px 4px rgba(0, 106, 255, 0.71);
         -moz-box-shadow: 6px 0px 17px 4px rgba(0, 106, 255, 0.71);
         box-shadow: 6px 0px 17px 4px rgba(0, 106, 255, 0.71);
-        @media screen and (min-width: 700px) {
-          font-size: 18px;
-        }
 
-        div {
+        div.text {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           padding: 1.5rem 0;
+          color: #06c4ac;
+
+          @media screen and (min-width: 700px) {
+            font-size: 18px;
+          }
+
           span {
             display: inline-block;
           }

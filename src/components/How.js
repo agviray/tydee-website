@@ -1,10 +1,36 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import {
   StyledHow,
   StyledContentContainer,
   StyledList,
   StyledServicePricingCardContainer,
 } from './styles/How.styled';
+
+// *** IMPORTANT ***
+// - Values in this array MUST match associated cardId in cardContents object, located in pricing.js page.
+const servicePricingCardDetails = [
+  {
+    hashToServicePricing: '#home-cleaning-pricing',
+    textOne: 'HOME',
+    textTwo: 'CLEANING',
+  },
+  {
+    hashToServicePricing: '#move-in-out-pricing',
+    textOne: 'MOVE-IN',
+    textTwo: 'MOVE-OUT',
+  },
+  {
+    hashToServicePricing: '#short-term-rental-pricing',
+    textOne: 'SHORT-TERM',
+    textTwo: 'RENTAL',
+  },
+  {
+    hashToServicePricing: '#balcony-cleaning-pricing',
+    textOne: 'BALCONY',
+    textTwo: 'CLEANING',
+  },
+];
 
 const How = () => {
   return (
@@ -43,30 +69,21 @@ const How = () => {
           <StyledServicePricingCardContainer>
             <div>
               <ul>
-                <li>
-                  <div>
-                    <span>HOME</span>
-                    <span>CLEANING</span>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <span>MOVE-IN</span>
-                    <span>MOVE-OUT</span>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <span>SHORT-TERM</span>
-                    <span>RENTAL</span>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <span>BALCONY</span>
-                    <span>CLEANING</span>
-                  </div>
-                </li>
+                {servicePricingCardDetails.map(
+                  ({ hashToServicePricing, textOne, textTwo }, index) => (
+                    <li key={index}>
+                      <Link
+                        to={`/pricing`}
+                        state={{ hash: hashToServicePricing }}
+                      >
+                        <div className="text">
+                          <span>{textOne}</span>
+                          <span>{textTwo}</span>
+                        </div>
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </StyledServicePricingCardContainer>
