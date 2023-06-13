@@ -14,7 +14,7 @@ const mainSiteLinks = [
   },
   {
     name: `Commercial Inquiries`,
-    href: `#`,
+    href: `/commercial-inquiries`,
   },
   {
     name: `Become a Tydee Pro`,
