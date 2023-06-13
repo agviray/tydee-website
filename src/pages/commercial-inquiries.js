@@ -2,24 +2,26 @@ import React from 'react';
 import { Link } from 'gatsby';
 import {
   StyledCommercialInquiries,
-  StyledButtonContainer,
+  StyledContactUsButtonContainer,
+  StyledContactUsTopButton,
+  StyledContactUsBottomButton,
   StyledInnerContainer,
   StyledServicesProvided,
   StyledImageCard,
 } from '../components/styles/CommercialInquiries.styled';
-import bar01 from '../images/commercial-inquiries-page/work-photos/bar-01.webp';
-import bar02 from '../images/commercial-inquiries-page/work-photos/bar-02.webp';
-import bar03 from '../images/commercial-inquiries-page/work-photos/bar-03.webp';
-import bar04 from '../images/commercial-inquiries-page/work-photos/bar-04.webp';
-import bar05 from '../images/commercial-inquiries-page/work-photos/bar-05.webp';
-import windowCleaning from '../images/commercial-inquiries-page/provided-services/window-cleaning.webp';
-import janitorialServices from '../images/commercial-inquiries-page/provided-services/janitorial-services.webp';
-import carpetUpholsteryCleaning from '../images/commercial-inquiries-page/provided-services/carpet-upholstery-cleaning.webp';
-import pressureWashing from '../images/commercial-inquiries-page/provided-services/pressure-washing.webp';
+import bar01 from '../images/commercial-inquiries-page/work-photos/bar-01.png';
+import bar02 from '../images/commercial-inquiries-page/work-photos/bar-02.png';
+import bar03 from '../images/commercial-inquiries-page/work-photos/bar-03.png';
+import bar04 from '../images/commercial-inquiries-page/work-photos/bar-04.png';
+import bar05 from '../images/commercial-inquiries-page/work-photos/bar-05.png';
+import windowCleaning from '../images/commercial-inquiries-page/provided-services/window-cleaning.png';
+import janitorialServices from '../images/commercial-inquiries-page/provided-services/janitorial-services.png';
+import carpetUpholsteryCleaning from '../images/commercial-inquiries-page/provided-services/carpet-upholstery-cleaning.png';
+import pressureWashing from '../images/commercial-inquiries-page/provided-services/pressure-washing.png';
 import Layout from '../components/Layout';
-import Carousel from '../components/Carousel';
+import OurWork from '../components/OurWork';
 
-const workImages = [
+const commercialWorkImages = [
   {
     imgSrc: bar01,
     imgAlt: `Clean front patio of downtown bar`,
@@ -95,11 +97,11 @@ const CommercialInquiries = () => {
                 Tydee is proud to provide businesses across Canada with
                 professional cleaning services
               </p>
-              <StyledButtonContainer>
-                <button>
+              <StyledContactUsButtonContainer>
+                <StyledContactUsTopButton>
                   <span>Contact Us</span>
-                </button>
-              </StyledButtonContainer>
+                </StyledContactUsTopButton>
+              </StyledContactUsButtonContainer>
             </div>
           </div>
           <section>
@@ -109,6 +111,17 @@ const CommercialInquiries = () => {
                 <div>{renderedImageCards}</div>
               </StyledInnerContainer>
             </StyledServicesProvided>
+          </section>
+          <section>
+            <OurWork
+              workHeading={'PHOTOS OF OUR WORK'}
+              workImages={commercialWorkImages}
+            />
+            <StyledContactUsButtonContainer className="bottom">
+              <StyledContactUsBottomButton onClick={(e) => e.preventDefault()}>
+                <span>Contact Us</span>
+              </StyledContactUsBottomButton>
+            </StyledContactUsButtonContainer>
           </section>
         </StyledCommercialInquiries>
       </section>

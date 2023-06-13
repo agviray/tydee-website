@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import divider from '../../images/commercial-inquiries-page/commercial-inquiries-bottom-divider.png';
 export const StyledCommercialInquiries = styled.div`
   background-color: #006aff;
   .innerWrapper {
@@ -29,34 +29,61 @@ export const StyledCommercialInquiries = styled.div`
   }
 `;
 
-export const StyledButtonContainer = styled.div`
+export const StyledContactUsButtonContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
 
-  button {
-    span {
-      display: inline-block;
-      padding: 0.5rem 1.5rem;
-      font-family: 'Avenir Heavy';
-      font-size: 20px;
-      color: #006aff;
-      background-color: white;
-      transition: all 0.3s ease-in-out;
+  &.bottom {
+    position: relative;
+    background-color: white;
+    padding-top: 0;
+    padding-bottom: 7rem;
+    width: 100%;
+    /* height: 135px; */
+    background-image: url(${divider});
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+`;
 
-      &:hover {
-        color: rgb(5, 196, 172);
-        background-color: rgb(65, 65, 65);
-      }
-    }
-    @media screen and (min-width: 700px) {
-      span {
-        font-size: 25px;
-        padding-left: 3rem;
-        padding-right: 3rem;
-      }
-    }
+export const StyledContactUsTopButton = styled.span`
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Avenir Heavy';
+  font-size: 20px;
+  color: #006aff;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: rgb(5, 196, 172);
+    background-color: rgb(65, 65, 65);
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 25px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+`;
+
+export const StyledContactUsBottomButton = styled.span`
+  display: inline-block;
+  width: 150px;
+  padding: 0.75rem 0;
+  font-family: 'Avenir Light';
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  background-color: #006aff;
+  border-radius: 40px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    background-color: black;
   }
 `;
 
@@ -72,10 +99,10 @@ export const StyledInnerContainer = styled.div`
 
   h3 {
     padding-bottom: 1.75rem;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     @media screen and (min-width: 700px) {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 
