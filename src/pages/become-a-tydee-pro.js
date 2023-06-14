@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyledBecomeATydeePro,
   StyledApplyNowButtonContainer,
@@ -13,6 +13,7 @@ import {
 } from '../components/styles/BecomeATydeePro.styled';
 import Layout from '../components/Layout';
 import FormItem from '../components/FormItem';
+import Dropdown from '../components/Dropdown';
 
 const whyCards = [
   {
@@ -73,7 +74,33 @@ const whoCards = [
   },
 ];
 
+const dropdown = {
+  label: `Desired position`,
+  options: [
+    {
+      label: `Choose an option`,
+      value: `default value`,
+    },
+    {
+      label: `Home Cleaner`,
+      value: `home cleaner`,
+    },
+    {
+      label: `Balcony Cleaner`,
+      value: `balcony cleaner`,
+    },
+    {
+      label: `Window Cleaner`,
+      value: `window cleaner`,
+    },
+  ],
+};
+
 const BecomeATydeePro = () => {
+  const [selectedDropdownValue, setSelectedDropdownValue] = useState(
+    dropdown.options[0].value
+  );
+
   const renderCards = (cards) => {
     return cards.map(({ id, heading, textGroup }, index) => (
       <StyledCard key={id}>
@@ -166,19 +193,14 @@ const BecomeATydeePro = () => {
                       <div className="singleContainer">
                         <div className="formItemContainer dropdownItemContainer">
                           <FormItem>
-                            <label htmlFor="">Desired Position</label>
-                            <select name="" id="">
-                              <option value="select an option">
-                                -- Choose an option --
-                              </option>
-                              <option value="home cleaner">Home Cleaner</option>
-                              <option value="balcony cleaner">
-                                Balcony Cleaner
-                              </option>
-                              <option value="window cleaner">
-                                Window Cleaner
-                              </option>
-                            </select>
+                            <Dropdown
+                              dropdownLabel={dropdown.label}
+                              options={dropdown.options}
+                              value={selectedDropdownValue}
+                              onSelectedDropdownValueChange={
+                                setSelectedDropdownValue
+                              }
+                            />
                           </FormItem>
                         </div>
                       </div>
