@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'gatsby';
 import {
   StyledBecomeATydeePro,
   StyledApplyNowButtonContainer,
@@ -8,12 +9,9 @@ import {
   StyledWhoGrid,
   StyledCard,
   StyledDivider,
-  StyledApplicationSection,
-  StyledForm,
 } from '../components/styles/BecomeATydeePro.styled';
 import Layout from '../components/Layout';
-import FormItem from '../components/FormItem';
-import Dropdown from '../components/Dropdown';
+import Application from '../components/Application';
 
 const whyCards = [
   {
@@ -74,33 +72,7 @@ const whoCards = [
   },
 ];
 
-const dropdown = {
-  label: `Desired position`,
-  options: [
-    {
-      label: `Choose an option`,
-      value: `default value`,
-    },
-    {
-      label: `Home Cleaner`,
-      value: `home cleaner`,
-    },
-    {
-      label: `Balcony Cleaner`,
-      value: `balcony cleaner`,
-    },
-    {
-      label: `Window Cleaner`,
-      value: `window cleaner`,
-    },
-  ],
-};
-
 const BecomeATydeePro = () => {
-  const [selectedDropdownValue, setSelectedDropdownValue] = useState(
-    dropdown.options[0].value
-  );
-
   const renderCards = (cards) => {
     return cards.map(({ id, heading, textGroup }, index) => (
       <StyledCard key={id}>
@@ -126,9 +98,11 @@ const BecomeATydeePro = () => {
                 you have the freedom to be your own boss.
               </p>
               <StyledApplyNowButtonContainer>
-                <StyledApplyNowButton>
-                  <span>Apply Now</span>
-                </StyledApplyNowButton>
+                <Link to="#application">
+                  <StyledApplyNowButton>
+                    <span>Apply Now</span>
+                  </StyledApplyNowButton>
+                </Link>
               </StyledApplyNowButtonContainer>
             </div>
           </div>
@@ -146,100 +120,9 @@ const BecomeATydeePro = () => {
             </StyledInnerContainer>
           </section>
           <section>
-            <StyledInnerContainer>
+            <StyledInnerContainer id="application">
               <h3>IS THIS YOU?</h3>
-              <StyledApplicationSection>
-                <p>Apply today and we'll be in touch!</p>
-                <div className="formContainer">
-                  <StyledForm onSubmit={(e) => e.preventDefault()}>
-                    <h3>APPLY HERE</h3>
-                    <div className="contentWrapper">
-                      <div className="flexContainer">
-                        <div className="formItemContainer textItemContainer">
-                          <FormItem>
-                            <label htmlFor="">First Name</label>
-                            <div className="textFormItem">
-                              <input type="text" />
-                            </div>
-                          </FormItem>
-                        </div>
-                        <div className="formItemContainer textItemContainer">
-                          <FormItem>
-                            <label htmlFor="">Last Name</label>
-                            <div className="textFormItem">
-                              <input type="text" />
-                            </div>
-                          </FormItem>
-                        </div>
-                      </div>
-                      <div className="flexContainer">
-                        <div className="formItemContainer textItemContainer">
-                          <FormItem>
-                            <label htmlFor="">Email</label>
-                            <div className="textFormItem">
-                              <input type="text" />
-                            </div>
-                          </FormItem>
-                        </div>
-                        <div className="formItemContainer textItemContainer">
-                          <FormItem>
-                            <label htmlFor="">Phone</label>
-                            <div className="textFormItem">
-                              <input type="text" />
-                            </div>
-                          </FormItem>
-                        </div>
-                      </div>
-                      <div className="singleContainer">
-                        <div className="formItemContainer dropdownItemContainer">
-                          <FormItem>
-                            <Dropdown
-                              dropdownLabel={dropdown.label}
-                              options={dropdown.options}
-                              value={selectedDropdownValue}
-                              onSelectedDropdownValueChange={
-                                setSelectedDropdownValue
-                              }
-                            />
-                          </FormItem>
-                        </div>
-                      </div>
-                      <div className="singleContainer">
-                        <div className="formItemContainer textItemContainer">
-                          <FormItem>
-                            <label htmlFor="">Work Experience</label>
-                            <div className="textFormItem">
-                              <textarea
-                                name=""
-                                id=""
-                                cols="30"
-                                rows="10"
-                              ></textarea>
-                            </div>
-                          </FormItem>
-                        </div>
-                      </div>
-                      <div className="singleContainer">
-                        <div className="formItemContainer textItemContainer">
-                          <FormItem>
-                            <label htmlFor="">Availability</label>
-                            <div className="textFormItem">
-                              <input type="text" />
-                            </div>
-                          </FormItem>
-                        </div>
-                      </div>
-                      <div className="singleContainer">
-                        <input
-                          type="button"
-                          value="Apply Now"
-                          onClick={(e) => e.preventDefault()}
-                        />
-                      </div>
-                    </div>
-                  </StyledForm>
-                </div>
-              </StyledApplicationSection>
+              <Application />
             </StyledInnerContainer>
           </section>
         </StyledBecomeATydeePro>

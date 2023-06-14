@@ -5,7 +5,11 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledDropdown = styled.select`
-  font-size: 16px;
+  width: 100%;
   padding: 0.5rem 1rem;
+  font-size: 16px;
   font-family: 'Avenir Light', Arial, Helvetica, sans-serif;
+  @media screen and (min-width: 500px) {
+    width: 50%;
+  }
 `;
