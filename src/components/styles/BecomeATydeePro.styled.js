@@ -155,8 +155,12 @@ export const StyledDivider = styled.div`
 `;
 
 export const StyledApplicationSection = styled.div`
+  padding: 0 2rem;
+  h3 {
+    padding-bottom: 2rem;
+  }
   p {
-    padding: 1.75rem 0;
+    padding: 1.75rem;
     text-align: center;
   }
 
@@ -164,7 +168,7 @@ export const StyledApplicationSection = styled.div`
   & > div.formContainer {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem;
     background-color: white;
     @media screen and (min-width: 500px) {
       padding: 4rem 2rem;
@@ -172,4 +176,29 @@ export const StyledApplicationSection = styled.div`
   }
 `;
 
-export const StyledForm = styled.form``;
+export const StyledForm = styled.form`
+  & div.formItemContainer {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+
+    &.textItemContainer {
+      border-bottom: 1px solid #006aff;
+      &:hover,
+      &:focus-within {
+        border-width: 3px;
+        border-color: black;
+      }
+
+      .textFormItem {
+        padding: 0.5rem;
+        &:focus-within {
+          background-color: #eff5ff;
+        }
+      }
+    }
+
+    &.dropdownItemContainer {
+      padding-bottom: 1rem;
+    }
+  }
+`;

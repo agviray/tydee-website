@@ -12,6 +12,7 @@ import {
   StyledForm,
 } from '../components/styles/BecomeATydeePro.styled';
 import Layout from '../components/Layout';
+import FormItem from '../components/FormItem';
 
 const whyCards = [
   {
@@ -127,36 +128,44 @@ const BecomeATydeePro = () => {
                     <h3>APPLY HERE</h3>
                     <div className="contentWrapper">
                       <div className="flexContainer">
-                        <div className="formItemContainer">
-                          <div className="formItem">
+                        <div className="formItemContainer textItemContainer">
+                          <FormItem>
                             <label htmlFor="">First Name</label>
-                            <input type="text" />
-                          </div>
+                            <div className="textFormItem">
+                              <input type="text" />
+                            </div>
+                          </FormItem>
                         </div>
-                        <div className="formItemContainer">
-                          <div className="formItem">
+                        <div className="formItemContainer textItemContainer">
+                          <FormItem>
                             <label htmlFor="">Last Name</label>
-                            <input type="text" />
-                          </div>
+                            <div className="textFormItem">
+                              <input type="text" />
+                            </div>
+                          </FormItem>
                         </div>
                       </div>
                       <div className="flexContainer">
-                        <div className="formItemContainer">
-                          <div className="formItem">
+                        <div className="formItemContainer textItemContainer">
+                          <FormItem>
                             <label htmlFor="">Email</label>
-                            <input type="text" />
-                          </div>
+                            <div className="textFormItem">
+                              <input type="text" />
+                            </div>
+                          </FormItem>
                         </div>
-                        <div className="formItemContainer">
-                          <div className="formItem">
+                        <div className="formItemContainer textItemContainer">
+                          <FormItem>
                             <label htmlFor="">Phone</label>
-                            <input type="text" />
-                          </div>
+                            <div className="textFormItem">
+                              <input type="text" />
+                            </div>
+                          </FormItem>
                         </div>
                       </div>
                       <div className="singleContainer">
-                        <div className="formItemContainer">
-                          <div className="formItem">
+                        <div className="formItemContainer dropdownItemContainer">
+                          <FormItem>
                             <label htmlFor="">Desired Position</label>
                             <select name="" id="">
                               <option value="select an option">
@@ -170,24 +179,32 @@ const BecomeATydeePro = () => {
                                 Window Cleaner
                               </option>
                             </select>
-                          </div>
+                          </FormItem>
                         </div>
                       </div>
                       <div className="singleContainer">
-                        <div className="formItemContainer">
-                          <label htmlFor="">Work Experience</label>
-                          <textarea
-                            name=""
-                            id=""
-                            cols="30"
-                            rows="10"
-                          ></textarea>
+                        <div className="formItemContainer textItemContainer">
+                          <FormItem>
+                            <label htmlFor="">Work Experience</label>
+                            <div className="textFormItem">
+                              <textarea
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="10"
+                              ></textarea>
+                            </div>
+                          </FormItem>
                         </div>
                       </div>
                       <div className="singleContainer">
-                        <div className="formItemContainer">
-                          <label htmlFor="">Availability</label>
-                          <input type="text" />
+                        <div className="formItemContainer textItemContainer">
+                          <FormItem>
+                            <label htmlFor="">Availability</label>
+                            <div className="textFormItem">
+                              <input type="text" />
+                            </div>
+                          </FormItem>
                         </div>
                       </div>
                       <div className="singleContainer">
