@@ -148,7 +148,7 @@ export const StyledDivider = styled.div`
   background-repeat: no-repeat;
 
   @media screen and (min-width: 1200px) {
-    background-repeat: repeat;
+    background-repeat: repeat-x;
   }
 `;
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import divider from '../../images/commercial-inquiries-page/commercial-inquiries-bottom-divider.png';
+
 export const StyledCommercialInquiries = styled.div`
   background-color: #006aff;
   .innerWrapper {
@@ -42,7 +43,6 @@ export const StyledContactUsButtonContainer = styled.div`
     padding-top: 0;
     padding-bottom: 7rem;
     width: 100%;
-    /* height: 135px; */
     background-image: url(${divider});
     background-repeat: no-repeat;
     background-position: bottom;
@@ -51,7 +51,9 @@ export const StyledContactUsButtonContainer = styled.div`
 
 export const StyledContactUsTopButton = styled.span`
   display: inline-block;
-  padding: 0.5rem 1.5rem;
+  width: 155px;
+  padding: 0.5rem 0;
+  text-align: center;
   font-family: 'Avenir Heavy';
   font-size: 20px;
   color: #006aff;
@@ -64,9 +66,8 @@ export const StyledContactUsTopButton = styled.span`
   }
 
   @media screen and (min-width: 700px) {
+    width: 170px;
     font-size: 25px;
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 `;
 
@@ -98,7 +99,6 @@ export const StyledInnerContainer = styled.div`
   }
 
   h3 {
-    padding-bottom: 1.75rem;
     font-size: 20px;
     text-align: center;
     @media screen and (min-width: 700px) {
@@ -134,9 +134,10 @@ export const StyledServicesProvided = styled.div`
       display: grid;
       grid-template-columns: minmax(0, 100%);
       gap: 1rem;
+      padding-top: 2rem;
 
       @media screen and (min-width: 500px) {
-        padding: 2rem;
+        padding: 4rem 2rem 0 2rem;
         grid-template-columns: repeat(2, minmax(0, 100%));
       }
 

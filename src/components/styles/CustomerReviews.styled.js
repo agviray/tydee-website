@@ -53,7 +53,7 @@ export const StyledReviewCard = styled.article`
   display: inline-block;
   min-width: 100%;
   max-width: 500px;
-  padding: 4rem;
+  padding: 3rem;
   background-color: #e8eefa;
 
   @media screen and (min-width: 1200px) {

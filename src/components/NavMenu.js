@@ -18,7 +18,7 @@ const mainSiteLinks = [
   },
   {
     name: `Become a Tydee Pro`,
-    href: `#`,
+    href: `/become-a-tydee-pro`,
   },
 ];
 
