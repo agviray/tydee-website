@@ -61,8 +61,8 @@ export const StyledApplyNowButton = styled.span`
 `;
 
 export const StyledInnerContainer = styled.div`
-  padding: 2rem 0;
-  background-color: white;
+  padding-top: 2rem;
+  background-color: #fafafa;
   @media screen and (min-width: 900px) {
     padding-top: 4rem;
   }
@@ -153,3 +153,23 @@ export const StyledDivider = styled.div`
     background-repeat: repeat-x;
   }
 `;
+
+export const StyledApplicationSection = styled.div`
+  p {
+    padding: 1.75rem 0;
+    text-align: center;
+  }
+
+  // - Application form container
+  & > div.formContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    background-color: white;
+    @media screen and (min-width: 500px) {
+      padding: 4rem 2rem;
+    }
+  }
+`;
+
+export const StyledForm = styled.form``;

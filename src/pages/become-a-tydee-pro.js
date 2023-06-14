@@ -8,6 +8,8 @@ import {
   StyledWhoGrid,
   StyledCard,
   StyledDivider,
+  StyledApplicationSection,
+  StyledForm,
 } from '../components/styles/BecomeATydeePro.styled';
 import Layout from '../components/Layout';
 
@@ -111,8 +113,94 @@ const BecomeATydeePro = () => {
           </section>
           <section>
             <StyledInnerContainer>
-              <h3>WHO WE ARE LOOKING FOR</h3>
+              <h3>WHO ARE WE LOOKING FOR?</h3>
               <StyledWhoGrid>{renderCards(whoCards)}</StyledWhoGrid>
+            </StyledInnerContainer>
+          </section>
+          <section>
+            <StyledInnerContainer>
+              <h3>IS THIS YOU?</h3>
+              <StyledApplicationSection>
+                <p>Apply today and we'll be in touch!</p>
+                <div className="formContainer">
+                  <StyledForm onSubmit={(e) => e.preventDefault()}>
+                    <h3>APPLY HERE</h3>
+                    <div className="contentWrapper">
+                      <div className="flexContainer">
+                        <div className="formItemContainer">
+                          <div className="formItem">
+                            <label htmlFor="">First Name</label>
+                            <input type="text" />
+                          </div>
+                        </div>
+                        <div className="formItemContainer">
+                          <div className="formItem">
+                            <label htmlFor="">Last Name</label>
+                            <input type="text" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flexContainer">
+                        <div className="formItemContainer">
+                          <div className="formItem">
+                            <label htmlFor="">Email</label>
+                            <input type="text" />
+                          </div>
+                        </div>
+                        <div className="formItemContainer">
+                          <div className="formItem">
+                            <label htmlFor="">Phone</label>
+                            <input type="text" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="singleContainer">
+                        <div className="formItemContainer">
+                          <div className="formItem">
+                            <label htmlFor="">Desired Position</label>
+                            <select name="" id="">
+                              <option value="select an option">
+                                -- Choose an option --
+                              </option>
+                              <option value="home cleaner">Home Cleaner</option>
+                              <option value="balcony cleaner">
+                                Balcony Cleaner
+                              </option>
+                              <option value="window cleaner">
+                                Window Cleaner
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="singleContainer">
+                        <div className="formItemContainer">
+                          <label htmlFor="">Work Experience</label>
+                          <textarea
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="10"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div className="singleContainer">
+                        <div className="formItemContainer">
+                          <label htmlFor="">Availability</label>
+                          <input type="text" />
+                        </div>
+                      </div>
+                      <div className="singleContainer">
+                        <input
+                          type="button"
+                          value="Apply Now"
+                          onClick={(e) => e.preventDefault()}
+                        />
+                      </div>
+                    </div>
+                  </StyledForm>
+                </div>
+              </StyledApplicationSection>
             </StyledInnerContainer>
           </section>
         </StyledBecomeATydeePro>

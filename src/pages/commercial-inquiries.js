@@ -95,7 +95,7 @@ const CommercialInquiries = () => {
               <h2>WE ALSO SERVICE BUSINESSES</h2>
               <p>
                 Tydee is proud to provide businesses across Canada with
-                professional cleaning services
+                professional cleaning services.
               </p>
               <StyledContactUsButtonContainer>
                 <StyledContactUsTopButton>
