@@ -25,7 +25,7 @@ const Navbar = () => {
     <StyledNavbar isNavigationShown={isNavigationShown}>
       <nav>
         <div>
-          <div className={`${windowWidth >= 900 ? 'desktopStyle' : ''}`}>
+          <div className={`${windowWidth >= 950 ? 'desktopStyle' : ''}`}>
             <Link to={'/'}>
               <StyledLogoContainer>
                 <img src={TydeeLogo} alt="Tydee logo" />

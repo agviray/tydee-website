@@ -41,7 +41,7 @@ const NavMenu = ({ isMenuOpen, onIsMenuOpenChange }) => {
   return (
     <StyledNavMenu
       isMenuOpen={isMenuOpen}
-      className={`${windowWidth >= 900 ? 'desktopStyle' : ''}`}
+      className={`${windowWidth >= 950 ? 'desktopStyle' : ''}`}
     >
       <div>
         <ul>

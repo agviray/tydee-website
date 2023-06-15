@@ -58,10 +58,13 @@ export const StyledNavMenu = styled.div`
       ul {
         display: flex;
         align-items: center;
-        gap: 3rem;
-        /* padding-left: 100px; */
+        gap: 1.5rem;
         opacity: 1;
         transition: none;
+
+        @media screen and (min-width: 1200px) {
+          gap: 3rem;
+        }
 
         li {
           &:not(:last-child) {
