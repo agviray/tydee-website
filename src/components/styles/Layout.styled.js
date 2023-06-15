@@ -8,4 +8,7 @@ export const StyledLayout = styled.div`
     //   to match it.
     height: 100px;
   }
+  footer {
+    background-color: #006aff;
+  }
 `;

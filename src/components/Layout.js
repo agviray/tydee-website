@@ -3,6 +3,7 @@ import GlobalFonts from '../components/styles/GlobalFonts';
 import GlobalStyles from '../components/styles/GlobalStyles';
 import { StyledLayout } from './styles/Layout.styled';
 import Navbar from './Navbar';
+import FooterContent from './FooterContent';
 
 const Layout = ({ children }) => {
   return (
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
         </header>
         <main>{children}</main>
         <footer>
-          <h2>Footer Content</h2>
+          <FooterContent />
         </footer>
       </StyledLayout>
     </>

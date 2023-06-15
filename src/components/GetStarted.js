@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import {
   StyledGetStartedWrapper,
   StyledGetStartedImageWrapper,
@@ -39,7 +40,9 @@ const GetStarted = () => {
                 booking offers free cancellation and rescheduling. Only pay
                 after the job has been completed.
               </p>
-              <StyledBookButton>Book A Service</StyledBookButton>
+              <Link to="/book-now">
+                <StyledBookButton>Book A Service</StyledBookButton>
+              </Link>
             </StyledContentInnerContainer>
           </StyledContentContainer>
         </div>
