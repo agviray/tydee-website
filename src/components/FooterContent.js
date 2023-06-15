@@ -61,7 +61,7 @@ const FooterContent = () => {
                   <Link to="/pricing">Services & Pricing</Link>
                 </li>
                 <li>
-                  <Link to="">Terms & Conditions</Link>
+                  <Link to="/terms-conditions">Terms & Conditions</Link>
                 </li>
                 <li>
                   <Link to="">Supplies</Link>
