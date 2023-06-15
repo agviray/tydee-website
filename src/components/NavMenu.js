@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from 'gatsby';
+import { navigate, Link } from 'gatsby';
 import { StyledNavMenu, StyledBookButton } from './styles/NavMenu.styled';
 import useWindowDimensions from './hooks/useWindowDimensions';
 
@@ -47,7 +47,9 @@ const NavMenu = ({ isMenuOpen, onIsMenuOpenChange }) => {
         <ul>
           {renderedMenuLinks}
           <li>
-            <StyledBookButton>Book Now</StyledBookButton>
+            <Link to={'/book-now'}>
+              <StyledBookButton>Book Now</StyledBookButton>
+            </Link>
           </li>
         </ul>
       </div>

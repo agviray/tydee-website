@@ -178,28 +178,29 @@ export const StyledButtonContainer = styled.div`
   align-items: center;
   padding-top: 3rem;
 
-  button {
+  a {
+    display: inline-block;
     z-index: 1;
-    span {
-      display: inline-block;
-      padding: 0.5rem 1.5rem;
-      font-family: 'Avenir Heavy';
-      font-size: 20px;
-      color: #006aff;
-      background-color: white;
-      transition: all 0.3s ease-in-out;
+  }
+  span {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Avenir Heavy';
+    font-size: 20px;
+    color: #006aff;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
 
-      &:hover {
-        color: rgb(5, 196, 172);
-        background-color: rgb(65, 65, 65);
-      }
+    &:hover {
+      color: rgb(5, 196, 172);
+      background-color: rgb(65, 65, 65);
     }
-    @media screen and (min-width: 700px) {
-      span {
-        font-size: 25px;
-        padding-left: 3rem;
-        padding-right: 3rem;
-      }
+  }
+  @media screen and (min-width: 700px) {
+    span {
+      font-size: 25px;
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
   }
 

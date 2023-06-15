@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import {
   StyledHero,
   StyledHeading,
@@ -24,9 +25,9 @@ const Hero = () => {
           </p>
         </StyledSubtext>
         <StyledButtonContainer>
-          <button>
+          <Link to={'/book-now'}>
             <span>Book Now</span>
-          </button>
+          </Link>
         </StyledButtonContainer>
         <div className={'imageContainer'}>
           <img src={heroCleaner} alt="Woman holding cleaning supplies" />
