@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'gatsby';
 import {
   StyledDetailedService,
   StyledCard,
@@ -308,7 +309,9 @@ const DetailedService = ({ location }) => {
               </div>
             </StyledGridContainer>
           </section>
-          <StyledBookNowButton>Book Now</StyledBookNowButton>
+          <Link to="/book-now">
+            <StyledBookNowButton>Book Now</StyledBookNowButton>
+          </Link>
         </StyledCard>
       </article>
     );
