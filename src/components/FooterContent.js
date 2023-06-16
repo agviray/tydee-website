@@ -67,7 +67,7 @@ const FooterContent = () => {
                   <Link to="">Supplies</Link>
                 </li>
                 <li>
-                  <Link to="">FAQ</Link>
+                  <Link to="/faq">FAQ</Link>
                 </li>
               </ul>
             </StyledLinksContainer>
