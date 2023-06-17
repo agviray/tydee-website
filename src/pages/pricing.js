@@ -7,7 +7,7 @@ import {
   StyledFlexContainer,
   StyledCard,
   StyledSeeFullDetailsButton,
-} from '../components/styles/Pricing.styled';
+} from '../components/styles/adfadf.styled';
 
 // *** IMPORTANT ***
 // - Each cardId must MUST match associated hashToServicePricing object values in servicePricingCardDetails array, located in How.js component.
