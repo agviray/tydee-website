@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import divider from '../../images/commercial-inquiries-page/commercial-inquiries-bottom-divider.png';
 
 export const StyledCommercialInquiries = styled.div`
   background-color: #006aff;
@@ -43,9 +42,6 @@ export const StyledContactUsButtonContainer = styled.div`
     padding-top: 0;
     padding-bottom: 7rem;
     width: 100%;
-    background-image: url(${divider});
-    background-repeat: no-repeat;
-    background-position: bottom;
   }
 `;
 
