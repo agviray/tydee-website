@@ -57,6 +57,14 @@ export const StyledContent = styled.div`
     font-size: 18px;
   }
 
+  p:not(:first-child) {
+    padding-top: 1rem;
+  }
+
+  a {
+    color: #006aff;
+  }
+
   ul {
     padding-top: 1rem;
     padding-left: 1rem;

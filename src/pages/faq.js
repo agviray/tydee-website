@@ -61,6 +61,8 @@ const faqContent = [
       },
       {
         hasLink: true,
+        linkText: 'here',
+        linkHref: '/',
         text: `You can request a cleaner by name when booking here.`,
       },
     ],
@@ -92,6 +94,8 @@ const faqContent = [
     bodyText: [
       {
         hasLink: true,
+        linkText: 'HERE',
+        linkHref: '/',
         text: `Yes! Book a cleaning service HERE to see if the time slot is available.`,
       },
     ],
