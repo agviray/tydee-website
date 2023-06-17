@@ -38,3 +38,11 @@ export const StyledContentContainer = styled.div`
     padding-top: 4rem;
   }
 `;
+
+export const StyledFlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+`;
