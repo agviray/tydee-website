@@ -117,11 +117,15 @@ const Faq = () => {
               <p>The Ins And Outs of How We Do Business</p>
             </div>
             <StyledContentContainer>
-              <StyledFlexContainer>
-                {faqContent.map((content, index) => (
-                  <Accordion key={index} content={content} />
-                ))}
-              </StyledFlexContainer>
+              <section>
+                <StyledFlexContainer>
+                  {faqContent.map((content, index) => (
+                    <article key={index}>
+                      <Accordion content={content} />
+                    </article>
+                  ))}
+                </StyledFlexContainer>
+              </section>
             </StyledContentContainer>
           </div>
         </StyledFaq>

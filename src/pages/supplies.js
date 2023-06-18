@@ -13,12 +13,8 @@ import useWindowDimensions from '../components/hooks/useWindowDimensions';
 
 const accordionContent = [
   {
-    heading: 'For the Kitchen',
+    heading: 'For the Kitchen...',
     list: [
-      {
-        href: `https://www.amazon.ca/gp/product/B01BY8A23Q/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B01BY8A23Q&linkCode=as2&tag=tydee-20&linkId=1e20720388e30b1050d3d4006deded73`,
-        text: `VIM Power and Shine Cleaner`,
-      },
       {
         href: `https://www.amazon.ca/gp/product/B005MKY9LO/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=tydee-20&creative=330641&linkCode=as2&creativeASIN=B005MKY9LO&linkId=d74fdb6fb502dd9602aa14c52dafbeee&th=1`,
         text: `Weiman Cook Top Cleaning Kit`,
@@ -42,7 +38,7 @@ const accordionContent = [
     ],
   },
   {
-    heading: 'For the Bathrooms',
+    heading: 'For the Bathrooms...',
     list: [
       {
         href: `https://www.amazon.ca/gp/product/B01HJM6AY6/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B01HJM6AY6&linkCode=as2&tag=tydee-20&linkId=b9a98df46ee4f554908f39d69871b48f`,
@@ -71,7 +67,7 @@ const accordionContent = [
     ],
   },
   {
-    heading: 'Walls and Windows',
+    heading: 'Walls and Windows...',
     list: [
       {
         href: `https://www.amazon.ca/gp/product/B07MF3DY3C/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=tydee-20&creative=330641&linkCode=as2&creativeASIN=B07MF3DY3C&linkId=0d04f37118284af6e88d9551ae18144f`,
@@ -88,7 +84,7 @@ const accordionContent = [
     ],
   },
   {
-    heading: 'General Purpose',
+    heading: 'General Purpose...',
     list: [
       {
         href: `https://www.amazon.ca/gp/product/B01MZ6ZFDK/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=tydee-20&creative=330641&linkCode=as2&creativeASIN=B01MZ6ZFDK&linkId=52b371d46e323147236a3a43cdf7369d`,
@@ -113,7 +109,7 @@ const accordionContent = [
     ],
   },
   {
-    heading: 'Vacuums We Trust',
+    heading: 'Vacuums We Trust...',
     list: [
       {
         href: `https://www.amazon.ca/gp/product/B0764G4Y2V/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=B0764G4Y2V&linkCode=as2&tag=tydee-20&linkId=a31dab9deef3b8de2c9eff1d0e724819`,
@@ -130,7 +126,7 @@ const accordionContent = [
     ],
   },
   {
-    heading: 'Mops We Love',
+    heading: 'Mops We Love...',
     list: [
       {
         href: `https://www.amazon.ca/gp/product/B01KU4BSGK/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=tydee-20&creative=330641&linkCode=as2&creativeASIN=B01KU4BSGK&linkId=79b225eba00c2d95a6743b453f1d6378`,
@@ -171,7 +167,7 @@ const Supplies = () => {
   const windowWidth = useWindowDimensions().width;
   const renderedAccordions = accordionContent.map((content, index) => {
     return (
-      <article index={index}>
+      <article key={index}>
         <Accordion content={content} />
       </article>
     );
@@ -182,32 +178,34 @@ const Supplies = () => {
       <section>
         <StyledSupplies>
           <div className="innerWrapper">
-            <StyledContentBlockOne>
-              <h2>NEED HELP WITH SUPPLIES?</h2>
-              <p>
-                We provide our own supplies, however some clients prefer for us
-                to use their own supplies to prevent cross contamination. So we
-                curated a list of items both we and our clients love!
-              </p>
-              <StyledSampleList>
-                <h3>SAMPLE LIST</h3>
-                <div>
-                  <StyledList>
-                    {sampleListColumnOne.map((text, index) => (
-                      <li key={index}>{text}</li>
-                    ))}
-                  </StyledList>
-                  <StyledList>
-                    {sampleListColumnTwo.map((text, index) => (
-                      <li key={index}>{text}</li>
-                    ))}
-                  </StyledList>
-                </div>
-              </StyledSampleList>
-            </StyledContentBlockOne>
-            <StyledContentBlockTwo>
-              <section>{renderedAccordions}</section>
-            </StyledContentBlockTwo>
+            <StyledContentContainer>
+              <StyledContentBlockOne>
+                <h2>NEED HELP WITH SUPPLIES?</h2>
+                <p>
+                  We provide our own supplies, however some clients prefer for
+                  us to use their own supplies to prevent cross contamination.
+                  So we curated a list of items both we and our clients love!
+                </p>
+                <StyledSampleList>
+                  <h3>SAMPLE LIST</h3>
+                  <div>
+                    <StyledList>
+                      {sampleListColumnOne.map((text, index) => (
+                        <li key={index}>{text}</li>
+                      ))}
+                    </StyledList>
+                    <StyledList>
+                      {sampleListColumnTwo.map((text, index) => (
+                        <li key={index}>{text}</li>
+                      ))}
+                    </StyledList>
+                  </div>
+                </StyledSampleList>
+              </StyledContentBlockOne>
+              <StyledContentBlockTwo>
+                <section>{renderedAccordions}</section>
+              </StyledContentBlockTwo>
+            </StyledContentContainer>
           </div>
         </StyledSupplies>
       </section>

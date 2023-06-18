@@ -3,13 +3,30 @@ import styled from 'styled-components';
 export const StyledSupplies = styled.div`
   background-color: #006aff;
   .innerWrapper {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 500px 2rem;
   }
 `;
 
-export const StyledContentContainer = styled.div``;
+export const StyledContentContainer = styled.div`
+  display: grid;
+  grid-template-areas:
+    'blockOne'
+    'blockTwo';
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1000px) {
+    grid-template-areas: 'blockOne blockTwo';
+    gap: 0;
+  }
+`;
 
 export const StyledContentBlockOne = styled.div`
+  grid-area: blockOne;
+  max-width: 450px;
+  margin: 0 auto;
+
   h2 {
     color: white;
     font-size: 20px;
@@ -33,8 +50,8 @@ export const StyledContentBlockOne = styled.div`
 `;
 
 export const StyledSampleList = styled.div`
-  max-width: 450px;
-  margin: 0 auto;
+  /* max-width: 450px;
+  margin: 0 auto; */
   padding: 1rem 0.5rem;
   background-color: white;
   border: 6px solid #7a8494;
@@ -66,7 +83,19 @@ export const StyledSampleList = styled.div`
   }
 `;
 
-export const StyledContentBlockTwo = styled.div``;
+export const StyledContentBlockTwo = styled.div`
+  grid-area: blockTwo;
+
+  & > section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    & > article {
+      border-bottom: 1px solid white;
+    }
+  }
+`;
 
 export const StyledList = styled.ul`
   list-style-type: disc;
