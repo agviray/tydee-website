@@ -17,8 +17,12 @@ const faqContent = [
       },
     ],
     list: [
-      '- $40 per hour for one-time service, per cleaner',
-      '- $35 per hour for recurring service, per cleaner',
+      {
+        text: `- $40 per hour for one-time service, per cleaner`,
+      },
+      {
+        text: `- $35 per hour for recurring service, per cleaner`,
+      },
     ],
   },
   {
@@ -62,7 +66,7 @@ const faqContent = [
       {
         hasLink: true,
         linkText: 'here',
-        linkHref: '/',
+        linkHref: '/book-now',
         text: `You can request a cleaner by name when booking here.`,
       },
     ],
@@ -95,7 +99,7 @@ const faqContent = [
       {
         hasLink: true,
         linkText: 'HERE',
-        linkHref: '/',
+        linkHref: '/book-now',
         text: `Yes! Book a cleaning service HERE to see if the time slot is available.`,
       },
     ],

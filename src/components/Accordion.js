@@ -22,14 +22,19 @@ const Accordion = ({ content }) => {
     );
   };
 
-  // - Renders lists if necessary.
-  const renderList = (listText) => {
-    return (
-      <ul>
-        {listText.map((text, index) => (
-          <li key={index}>{text}</li>
-        ))}
-      </ul>
+  // - Renders content in list form.
+  // - Will render regular list item text, or list item link.
+  const renderList = (list) => {
+    return list.map((listItem, index) =>
+      !listItem.href ? (
+        <li key={index}>{listItem.text}</li>
+      ) : (
+        <li key={index}>
+          <a href={listItem.href} target="_blank">
+            {listItem.text}
+          </a>
+        </li>
+      )
     );
   };
 
@@ -49,6 +54,19 @@ const Accordion = ({ content }) => {
     );
   };
 
+  const renderAccordionContent = (accordionContent) => {
+    return (
+      <>
+        {accordionContent.bodyText
+          ? renderBodyText(accordionContent.bodyText)
+          : null}
+        {accordionContent.list ? (
+          <ul>{renderList(accordionContent.list)}</ul>
+        ) : null}
+      </>
+    );
+  };
+
   return (
     <StyledAccordion>
       <StyledHeading isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
@@ -58,8 +76,7 @@ const Accordion = ({ content }) => {
         </div>
       </StyledHeading>
       <StyledContent isOpen={isOpen}>
-        {renderBodyText(content.bodyText)}
-        <>{content.list ? renderList(content.list) : null}</>
+        {renderAccordionContent(content)}
       </StyledContent>
     </StyledAccordion>
   );

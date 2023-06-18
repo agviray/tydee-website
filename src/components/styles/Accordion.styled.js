@@ -12,6 +12,10 @@ export const StyledHeading = styled.div`
   gap: 1rem;
   padding: 1rem;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: 700px) {
     padding: 2rem;
   }

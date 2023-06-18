@@ -8,6 +8,7 @@ import {
   StyledSampleList,
 } from '../components/styles/Supplies.styled';
 import Layout from '../components/Layout';
+import Accordion from '../components/Accordion';
 import useWindowDimensions from '../components/hooks/useWindowDimensions';
 
 const accordionContent = [
@@ -168,6 +169,14 @@ const sampleListColumnTwo = [
 
 const Supplies = () => {
   const windowWidth = useWindowDimensions().width;
+  const renderedAccordions = accordionContent.map((content, index) => {
+    return (
+      <article index={index}>
+        <Accordion content={content} />
+      </article>
+    );
+  });
+
   return (
     <Layout>
       <section>
@@ -196,6 +205,9 @@ const Supplies = () => {
                 </div>
               </StyledSampleList>
             </StyledContentBlockOne>
+            <StyledContentBlockTwo>
+              <section>{renderedAccordions}</section>
+            </StyledContentBlockTwo>
           </div>
         </StyledSupplies>
       </section>
