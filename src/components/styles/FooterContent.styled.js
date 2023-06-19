@@ -61,7 +61,7 @@ export const StyledLogoContainer = styled.div`
   }
   span {
     display: inline-block;
-    max-width: 105px;
+    width: 105px;
     img {
       width: 100%;
     }
@@ -103,7 +103,7 @@ export const StyledSocialLinks = styled.div`
         height: 100%;
 
         img {
-          width: 100%;
+          width: 35px;
         }
       }
     }

@@ -48,7 +48,7 @@ export const StyledLogoContainer = styled.span`
   display: inline-flex;
 
   &:nth-of-type(1) {
-    max-width: 105px;
+    width: 105px;
 
     img {
       width: 100%;
