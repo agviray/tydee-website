@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const StyledSupplies = styled.div`
   background-color: #006aff;
   .innerWrapper {
-    padding: 5rem 2rem 500px 2rem;
+    padding: 5rem 2rem;
+
+    @media screen and (min-width: 1000px) {
+      padding-bottom: 200px;
+    }
   }
 `;
 
